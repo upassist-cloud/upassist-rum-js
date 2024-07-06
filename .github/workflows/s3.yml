@@ -23,8 +23,8 @@ jobs:
       with:
         args: --acl-public
       env:
-        LOCAL_FILE: dist/
-        REMOTE_FILE: js/dist/
+        LOCAL_FILE: dist/rumscript.js
+        REMOTE_FILE: js/rumscript.js
         AWS_ENDPOINT: ${{ secrets.AWS_ENDPOINT }}
         AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
