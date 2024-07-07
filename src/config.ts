@@ -65,7 +65,7 @@ export interface UpassistRUMConfig {
 // Adding new config options is safe
 // Do NOT change existing defaults - would break existing integrations
 export let RUM_GLOBAL_CONFIG: UpassistRUMConfig = {
-  ingestionHost: 'https://api.upassist.cloud',
+  ingestionHost: 'https://rum.upassist.cloud/api',
   honorDNT: false,
   filterLocalhost: false,
   debug: false,
