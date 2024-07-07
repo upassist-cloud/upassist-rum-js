@@ -17,7 +17,8 @@ export function collectEvent(eventName: string, dimensionOverrides: any): Upassi
     connection_type: getConnectionType(),
     screen_width: getScreenWidth(),
     timezone: getTimezone(),
-    session_id: getSessionCookie(),
+    session_id: getSessionId(),
+    client_id: getClientId(),
     ...getUTMParams(),
     ...getPageLoadTimings(eventName),
     ...(dimensionOverrides || {}),
@@ -118,17 +119,28 @@ const asIntOrUndefined = (value: any) => {
   }
 };
 
-export const getSessionCookie = () => {
-  const existingSession = getCookie(constants.SESSION_COOKIE);
-  if (!existingSession) {
-    log('Session is not found, creating new one');
+export const getSessionId = () => {
+  const existingSessionId = getCookie(constants.SESSION_COOKIE);
+  if (!existingSessionId) {
+    log('Session id is not found, creating new one');
     const expiresAt = new Date();
     expiresAt.setMinutes(expiresAt.getMinutes() + 30);
-    const newSession = uuidv4();
-    setCookie(constants.SESSION_COOKIE, newSession, { expires: expiresAt });
-    return newSession;
+    const newSessionId = uuidv4();
+    setCookie(constants.SESSION_COOKIE, newSessionId, { expires: expiresAt });
+    return newSessionId;
   }
-  return existingSession;
+  return existingSessionId;
+};
+
+export const getClientId = () => {
+  const existingClientId = getCookie(constants.CLIENT_COOKIE);
+  if (!existingClientId) {
+    log('Client id is not found, creating new one');
+    const newClientId = uuidv4();
+    setCookie(constants.CLIENT_COOKIE, newClientId);
+    return newClientId;
+  }
+  return existingClientId;
 };
 
 const getPageLoadTimings = (eventName: string) => {

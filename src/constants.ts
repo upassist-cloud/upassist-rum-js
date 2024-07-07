@@ -4,7 +4,8 @@ export const constants = {
   DEBUG_FLAG: `upassist_rum_debug`,
   TRACKING_ENABLED: `upassist_rum_enable`,
   TRACKING_DISABLED: `upassist_rum_disable`,
-  SESSION_COOKIE: `_up_session_id`,
+  SESSION_COOKIE: `_upassist_session_id`,
+  CLIENT_COOKIE: `_upassist_client_id`,
 };
 
 export interface UpassistRUMGlobals {
