@@ -1,10 +1,10 @@
 {
-  "name": "@upassistio/upassist-rum",
-  "version": "0.4.1",
+  "name": "@upassist-cloud/upassist-rum",
+  "version": "0.0.2",
   "description": "Official Upassist RUM client (browser)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/upassistio/upassist-rum-js.git"
+    "url": "git+https://github.com/upassist-cloud/upassist-rum-js.git"
   },
   "keywords": [
     "upassist",
