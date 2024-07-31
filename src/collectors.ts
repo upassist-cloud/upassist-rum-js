@@ -2,8 +2,11 @@ import { RUM_GLOBAL_CONFIG } from './config';
 import { UpassistRUMEvent } from './collect';
 import { constants } from './constants';
 import { log } from './helpers';
-import { getCookie, setCookie } from 'typescript-cookie';
+import Cookies from 'universal-cookie';
 import { v4 as uuidv4 } from 'uuid';
+
+
+const cookies = new Cookies(null);
 
 export function collectEvent(eventName: string, dimensionOverrides: any): UpassistRUMEvent {
   return {
@@ -120,24 +123,24 @@ const asIntOrUndefined = (value: any) => {
 };
 
 export const getSessionId = () => {
-  const existingSessionId = getCookie(constants.SESSION_COOKIE);
+  const existingSessionId = cookies.get(constants.SESSION_COOKIE);
   if (!existingSessionId) {
     log('Session id is not found, creating new one');
     const expiresAt = new Date();
     expiresAt.setMinutes(expiresAt.getMinutes() + 30);
     const newSessionId = uuidv4();
-    setCookie(constants.SESSION_COOKIE, newSessionId, { expires: expiresAt });
+    cookies.set(constants.SESSION_COOKIE, newSessionId, { expires: expiresAt });
     return newSessionId;
   }
   return existingSessionId;
 };
 
 export const getClientId = () => {
-  const existingClientId = getCookie(constants.CLIENT_COOKIE);
+  const existingClientId = cookies.get(constants.CLIENT_COOKIE);
   if (!existingClientId) {
     log('Client id is not found, creating new one');
     const newClientId = uuidv4();
-    setCookie(constants.CLIENT_COOKIE, newClientId);
+    cookies.set(constants.CLIENT_COOKIE, newClientId);
     return newClientId;
   }
   return existingClientId;

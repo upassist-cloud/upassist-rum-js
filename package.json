@@ -44,6 +44,7 @@
   },
   "homepage": "https://github.com/upassistio/upassist-rum-js#readme",
   "dependencies": {
+    "@types/universal-cookie": "^3.0.0",
     "@types/uuid": "^10.0.0",
     "typescript-cookie": "^1.0.6",
     "uuid": "^10.0.0",
