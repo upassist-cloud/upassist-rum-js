@@ -1,6 +1,6 @@
 {
   "name": "@upassist-cloud/upassist-rum",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Official Upassist RUM client (browser)",
   "repository": {
     "type": "git",
@@ -51,6 +51,7 @@
   },
   "exports": {
     ".": "./dist/index.js",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./dist": "./dist"
   }
 }
