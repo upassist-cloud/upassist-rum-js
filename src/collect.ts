@@ -58,6 +58,9 @@ export const send = async (event: UpassistRUMEvent) => {
       body: data,
       method: 'POST',
       credentials: 'omit',
+      headers: {
+        "Content-type": "application/json"
+      },
       keepalive: true,
     });
   }
