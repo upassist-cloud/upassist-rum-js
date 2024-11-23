@@ -5,7 +5,6 @@ import { log } from './helpers';
 import Cookies from 'universal-cookie';
 import { v4 as uuidv4 } from 'uuid';
 
-
 const cookies = new Cookies(null);
 
 export function collectEvent(eventName: string, dimensionOverrides: any): UpassistRUMEvent {
@@ -83,7 +82,7 @@ const getTimezone = () => {
 };
 
 const getConnectionType = () => {
-  const hasEffectiveType = navigator.connection && 'effectiveType' in navigator.connection;
+  const hasEffectiveType = (navigator as any).connection && 'effectiveType' in (navigator as any).connection;
   // @ts-ignore
   return hasEffectiveType ? navigator.connection.effectiveType : undefined;
 };
