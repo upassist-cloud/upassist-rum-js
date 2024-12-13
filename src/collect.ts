@@ -51,20 +51,20 @@ export const collect = async (eventName: string, dimensionOverrides: any) => {
 export const send = async (event: UpassistRUMEvent) => {
   const url = `${RUM_GLOBAL_CONFIG.ingestionHost}/sites/events`;
   const data = JSON.stringify(event);
-//   if (navigator.sendBeacon) {
-//     navigator.sendBeacon.call(navigator, url, data);
-//   } else {
-    await fetch(url, {
-      body: data,
-      method: 'POST',
-      credentials: 'omit',
-      headers: {
-        "Content-type": "application/json"
-      },
-      keepalive: true,
-    });
-//   }
-//   log('Sent events', event);
+  //   if (navigator.sendBeacon) {
+  //     navigator.sendBeacon.call(navigator, url, data);
+  //   } else {
+  await fetch(url, {
+    body: data,
+    method: 'POST',
+    credentials: 'omit',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    keepalive: true,
+  });
+  //   }
+  //   log('Sent events', event);
 };
 
 export const shouldCollect = (payload: UpassistRUMEvent) => {
