@@ -1,6 +1,6 @@
 {
   "name": "@upassist-cloud/upassist-rum",
-  "version": "0.0.4",
+  "version": "0.1.2",
   "description": "Official Upassist RUM client (browser)",
   "repository": {
     "type": "git",
@@ -40,9 +40,9 @@
     "typescript": "^4.0.5"
   },
   "bugs": {
-    "url": "https://github.com/upassistio/upassist-rum-js/issues"
+    "url": "https://github.com/upassist-cloud/upassist-rum-js/issues"
   },
-  "homepage": "https://github.com/upassistio/upassist-rum-js#readme",
+  "homepage": "https://github.com/upassist-cloud/upassist-rum-js#readme",
   "dependencies": {
     "@types/universal-cookie": "^3.0.0",
     "@types/uuid": "^10.0.0",

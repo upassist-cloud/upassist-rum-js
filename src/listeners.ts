@@ -22,9 +22,9 @@ export function listenForCoreWebVitals() {
     track(eventName, { [dimension]: event.value });
   };
 
-  onCLS(handler('WebVital', 'web_vital_cls'));
-  onFID(handler('WebVital', 'web_vital_fid'));
-  onLCP(handler('WebVital', 'web_vital_lcp'));
+  onCLS && onCLS(handler('WebVital', 'web_vital_cls'));
+  onFID && onFID(handler('WebVital', 'web_vital_fid'));
+  onLCP && onLCP(handler('WebVital', 'web_vital_lcp'));
 
   window.upassist._listeningForCoreWebVitals = true;
 

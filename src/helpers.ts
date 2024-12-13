@@ -22,7 +22,6 @@ export const evalTrackingToggle = () => {
     }
   }
 };
-
 export const patchHistoryAPI = () => {
   // Patch browser history API to track state changes
   if (window.history.pushState && !window.upassist._historyPatched) {
