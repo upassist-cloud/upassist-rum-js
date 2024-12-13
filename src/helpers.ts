@@ -24,7 +24,7 @@ export const evalTrackingToggle = () => {
 };
 export const patchHistoryAPI = () => {
   // Patch browser history API to track state changes
-  if (window.history.pushState && !window.upassist._historyPatched) {
+  if (window.upassist && window.history.pushState && !window.upassist._historyPatched) {
     log("Single page app mode is set to 'history', patching History API");
     const existing = window.history.pushState;
     const hook = () => track('Pageview');

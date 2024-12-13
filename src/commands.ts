@@ -68,7 +68,6 @@ export const config = (params: Partial<UpassistRUMConfig>) => {
   // If tracking mode is 'history' we trigger an initial pageview AND bind to the browser history to track clientside changes
   if (RUM_GLOBAL_CONFIG.trackMode && ['pageload', 'history'].indexOf(RUM_GLOBAL_CONFIG.trackMode) > -1) {
     if (RUM_GLOBAL_CONFIG.trackMode === 'history') {
-      if (!window.upassist) browserInit();
       patchHistoryAPI();
     }
 
